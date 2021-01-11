@@ -1,22 +1,21 @@
-* Cool Emacs Stuff to talk about w/ Jacob
+* Org-Mode Explorations [3/7]
 
-  Slide 1
+** DONE Python environment via org-babel
 
-* TODO Org-Roam
+   #+name: python example
+   #+begin_src python :tangle hello.py
+     print("Hello, Python!")
+   #+end_src
 
-  slide 2
-  
-* Python environment via org-babel
+** DONE Org-Roam
 
-  [[file:Downloads/tomato.jpg]]
-  
-* Context dependent fonts
+** DONE Org-present
 
-* Customizing fonts / themes
+** TODO Magit
 
-* Org-present
+** TODO EMMS
 
-* Magit
+** TODO Customizing fonts / themes
 
-* EMMS
+** TODO Context dependent fonts
 
