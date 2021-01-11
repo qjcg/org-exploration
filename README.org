@@ -1,0 +1,22 @@
+* Cool Emacs Stuff to talk about w/ Jacob
+
+  Slide 1
+
+* TODO Org-Roam
+
+  slide 2
+  
+* Python environment via org-babel
+
+  [[file:Downloads/tomato.jpg]]
+  
+* Context dependent fonts
+
+* Customizing fonts / themes
+
+* Org-present
+
+* Magit
+
+* EMMS
+
