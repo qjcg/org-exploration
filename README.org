@@ -7,6 +7,64 @@
      print("Hello, Python!")
    #+end_src
 
+   #+begin_src elisp
+     (setq org-babel-python-command "/home/j-brady/anaconda3/bin/python")
+   #+end_src
+
+   #+RESULTS:
+   : /home/j-brady/anaconda3/bin/python
+
+   #+begin_src python
+   import pandas as pd
+   df = pd.DataFrame({"a":[1,2,3,4],"b":[5,6,7,8]})
+   return df.values
+   #+end_src
+
+   #+RESULTS:
+   | 1 | 5 |
+   | 2 | 6 |
+   | 3 | 7 |
+   | 4 | 8 |
+
+Change to another python environment...
+
+   #+begin_src elisp
+(setq org-babel-python-command "/home/j-brady/anaconda3/envs/test/bin/python")
+
+   #+end_src
+
+   #+RESULTS:
+   : /home/j-brady/anaconda3/envs/test/bin/python
+
+   #+begin_src python
+    import sys
+
+    return sys.version_info
+
+   #+end_src
+
+   #+RESULTS:
+   : sys.version_info(major=3, minor=9, micro=1, releaselevel='final', serial=0)
+
+   Matplotlib plots can be created and viewed within org-mode using the following code adapted from this [[https:acaird.github.io/2015/09/04/plots-from-org-mode-tables][awesome blog post]].
+
+   #+begin_src python :results file :exports results
+   import numpy as np
+   import matplotlib.pyplot as plt
+
+   x = np.linspace(0,5*np.pi,200)
+   y = np.sin(x)
+   plt.plot(x,y)
+   plotname = "tmp.png"
+   plt.savefig(plotname)
+   plt.xlabel("x")
+   plt.ylabel("sin(x)")
+   return plotname
+   #+end_src
+
+   #+RESULTS:
+   [[file:tmp.png]]
+
 ** DONE Org-Roam
 
 ** DONE Org-present
