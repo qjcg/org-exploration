@@ -1,4 +1,6 @@
-* Org-Mode Explorations [3/7]
+#+TITLE: Org-Mode Explorations
+
+* Org-Mode Explorations
 
 ** DONE Python environment via org-babel
 
@@ -33,9 +35,6 @@ Change to another python environment...
 
    #+end_src
 
-   #+RESULTS:
-   : /home/j-brady/anaconda3/envs/test/bin/python
-
    #+begin_src python
     import sys
 
@@ -56,9 +55,9 @@ Change to another python environment...
    y = np.sin(x)
    plt.plot(x,y)
    plotname = "tmp.png"
-   plt.savefig(plotname)
    plt.xlabel("x")
    plt.ylabel("sin(x)")
+   plt.savefig(plotname)
    return plotname
    #+end_src
 
@@ -66,8 +65,52 @@ Change to another python environment...
    [[file:tmp.png]]
 
 ** DONE Org-Roam
+*** An example set up for org-roam-dailies
 
+#+begin_src elisp
+(setq org-roam-dailies-directory "daily/")
+(setq org-roam-dailies-capture-templates
+      '(("l" "lab" entry
+         #'org-roam-capture--get-point
+         "* %?"
+         :file-name "daily/%<%Y-%m-%d>-${name}"
+         :head "#+title: %<%Y-%m-%d> - ${name}\n"
+         :olp ("Lab notes for ${name}"))
+
+        ("p" "project-1" entry
+         #'org-roam-capture--get-point
+         "* %?"
+         :file-name "daily/%<%Y-%m-%d>-project-1"
+         :head "#+title: %<%Y-%m-%d> - project-code-1\n#+roam_tags: project-code-1"
+         :olp ("Lab notes for project-1"))
+
+        ("j" "journal" entry
+         #'org-roam-capture--get-point
+         "* %?"
+         :file-name "daily/%<%Y-%m-%d>"
+         :head "#+title: %<%Y-%m-%d>\n"
+         :olp ("Journal"))))
+#+end_src
+
+#+RESULTS:
+| l    | lab                     | entry | (function org-roam-capture--get-point) | * %? | :file-name | daily/%<%Y-%m-%d>-${name}   | :head | #+title: %<%Y-%m-%d> - ${name}        |
+| :olp | (Lab notes for ${name}) |       |                                        |      |            |                             |       |                                       |
+| p    | project-1               | entry | (function org-roam-capture--get-point) | * %? | :file-name | daily/%<%Y-%m-%d>-project-1 | :head | #+title: %<%Y-%m-%d> - project-code-1 |
+
+Then use M-x org-roam-dailies-capture-today to access the template menu.
 ** DONE Org-present
+
+*** Slide 1
+- one
+- two
+- three
+  [[file:tmp.png]]
+
+
+*** Slide 2
+1. one
+2. two
+3. three
 
 ** TODO Magit
 
@@ -77,3 +120,4 @@ Change to another python environment...
 
 ** TODO Context dependent fonts
 
+** TODO reveal
